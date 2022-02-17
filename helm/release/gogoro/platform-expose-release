@@ -1,0 +1,3624 @@
+NAME: platform-expose
+LAST DEPLOYED: Tue Feb 15 07:05:38 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 8
+TEST SUITE: None
+USER-SUPPLIED VALUES:
+exposes:
+- deployments:
+  - hosts:
+    - data-dispatcher.qa.gogoro.cc
+    name: data-dispatcher
+    port: 5678
+  - hosts:
+    - goplatform.qa.gogoro.cc
+    name: goplatform
+    port: 8080
+  - hosts:
+    - goplatform-account.qa.gogoro.cc
+    name: goplatform-account
+    port: 8080
+  - hosts:
+    - go-platform-api-doc.qa.gogoro.cc
+    name: goplatform-api-doc-portal
+    port: 3000
+  - hosts:
+    - goplatform-bi.qa.gogoro.cc
+    name: goplatform-bi
+    port: 8080
+  - hosts:
+    - goplatform-fota.qa.gogoro.cc
+    name: goplatform-fota
+    port: 8080
+  - hosts:
+    - goplatform-global.qa.gogoro.cc
+    name: goplatform-global
+    port: 8080
+  - hosts:
+    - keyservice.qa.gogoro.cc
+    name: goplatform-keyservice
+    port: 8080
+  - hosts:
+    - goplatform-minvoice.qa.gogoro.cc
+    name: goplatform-minvoice
+    port: 8080
+  - hosts:
+    - goplatform-partner.qa.gogoro.cc
+    name: goplatform-partner
+    port: 8080
+  - hosts:
+    - goplatform-pocket.qa.gogoro.cc
+    name: goplatform-pocket
+    port: 8080
+  - hosts:
+    - goplatform-report.qa.gogoro.cc
+    name: goplatform-report
+    port: 8080
+  - hosts:
+    - goplatform-scooter-gtu.qa.gogoro.cc
+    name: goplatform-scooter-gtu
+    port: 8080
+  - hosts:
+    - goplatform-service.qa.gogoro.cc
+    name: goplatform-service
+    port: 8080
+  - hosts:
+    - goplatform-swaplog.qa.gogoro.cc
+    name: goplatform-swaplog
+    port: 8080
+  - hosts:
+    - goplatform-vm.qa.gogoro.cc
+    name: goplatform-vm
+    port: 8080
+  targetNamespace: ggr-goplatform
+- deployments:
+  - hosts:
+    - bi-data-collector-acl.qa.gogoro.cc
+    name: bi-data-collector-acl
+    port: 5678
+  - hosts:
+    - goplatform-account-acl.qa.gogoro.cc
+    name: goplatform-account-acl
+    port: 8080
+  - hosts:
+    - goplatform-acl.qa.gogoro.cc
+    name: goplatform-acl
+    port: 8080
+  - hosts:
+    - goplatform-alert-acl.qa.gogoro.cc
+    name: goplatform-alert-acl
+    port: 8080
+  - hosts:
+    - goplatform-bi-acl.qa.gogoro.cc
+    name: goplatform-bi-acl
+    port: 8080
+  - hosts:
+    - goplatform-billing-acl.qa.gogoro.cc
+    name: goplatform-billing-acl
+    port: 8080
+  - hosts:
+    - goplatform-swaplog-acl-billing.qa.gogoro.cc
+    name: goplatform-billing-swaplog-acl
+    port: 8080
+  - hosts:
+    - goplatform-global-acl.qa.gogoro.cc
+    name: goplatform-global-acl
+    port: 8080
+  - hosts:
+    - goplatform-global-gs-acl.qa.gogoro.cc
+    name: goplatform-global-gs-acl
+    port: 8080
+  - hosts:
+    - goplatform-global-redirect-acl.qa.gogoro.cc
+    name: goplatform-global-redirect-acl
+    port: 8080
+  - hosts:
+    - keyservice-acl.qa.gogoro.cc
+    name: goplatform-keyservice-acl
+    port: 8080
+  - hosts:
+    - goplatform-minvoice-acl.qa.gogoro.cc
+    name: goplatform-minvoice-acl
+    port: 8080
+  - hosts:
+    - goplatform-minvoice-billing-acl.qa.gogoro.cc
+    name: goplatform-minvoice-billing-acl
+    port: 8080
+  - hosts:
+    - goplatform-partner-acl.qa.gogoro.cc
+    name: goplatform-partner-acl
+    port: 8080
+  - hosts:
+    - goplatform-pocket-acl.qa.gogoro.cc
+    name: goplatform-pocket-acl
+    port: 8080
+  - hosts:
+    - goplatform-pocket-billing-acl.qa.gogoro.cc
+    name: goplatform-pocket-billing-acl
+    port: 8080
+  - hosts:
+    - goplatform-report-acl.qa.gogoro.cc
+    name: goplatform-report-acl
+    port: 8080
+  - hosts:
+    - goplatform-scooter-gtu-acl.qa.gogoro.cc
+    name: goplatform-scooter-gtu-acl
+    port: 8080
+  - hosts:
+    - goplatform-service-acl.qa.gogoro.cc
+    name: goplatform-service-acl
+    port: 8080
+  - hosts:
+    - goplatform-swaplog-acl.qa.gogoro.cc
+    name: goplatform-swaplog-acl
+    port: 8080
+  - hosts:
+    - goplatform-vm-acl.qa.gogoro.cc
+    name: goplatform-vm-acl
+    port: 8080
+  - hosts:
+    - middle-db-synchronizer-acl.qa.gogoro.cc
+    name: middle-db-synchronizer-acl
+    port: 8080
+  targetNamespace: ggr-goplatform-acl
+- deployments:
+  - name: goplatform-acl
+    port: 8080
+  - name: goplatform-alert-acl
+    port: 8080
+  - name: goplatform-global-acl
+    port: 8080
+  - name: goplatform-global-gs-acl
+    port: 8080
+  - name: goplatform-keyservice-acl
+    port: 8080
+  - name: goplatform-swaplog-acl
+    port: 8080
+  - name: goplatform-vm-acl
+    port: 8080
+  targetNamespace: ggr-goplatform-gos-acl
+- deployments:
+  - name: goplatform
+    port: 8080
+  - name: goplatform-global
+    port: 8080
+  - name: goplatform-keyservice
+    port: 8080
+  - name: goplatform-pocket
+    port: 8080
+  - name: goplatform-swaplog
+    port: 8080
+  - name: goplatform-vm
+    port: 8080
+  targetNamespace: ggr-goplatform-mggr
+global:
+  environment: qa
+  platform: on-premises
+
+COMPUTED VALUES:
+exposes:
+- deployments:
+  - hosts:
+    - data-dispatcher.qa.gogoro.cc
+    name: data-dispatcher
+    port: 5678
+  - hosts:
+    - goplatform.qa.gogoro.cc
+    name: goplatform
+    port: 8080
+  - hosts:
+    - goplatform-account.qa.gogoro.cc
+    name: goplatform-account
+    port: 8080
+  - hosts:
+    - go-platform-api-doc.qa.gogoro.cc
+    name: goplatform-api-doc-portal
+    port: 3000
+  - hosts:
+    - goplatform-bi.qa.gogoro.cc
+    name: goplatform-bi
+    port: 8080
+  - hosts:
+    - goplatform-fota.qa.gogoro.cc
+    name: goplatform-fota
+    port: 8080
+  - hosts:
+    - goplatform-global.qa.gogoro.cc
+    name: goplatform-global
+    port: 8080
+  - hosts:
+    - keyservice.qa.gogoro.cc
+    name: goplatform-keyservice
+    port: 8080
+  - hosts:
+    - goplatform-minvoice.qa.gogoro.cc
+    name: goplatform-minvoice
+    port: 8080
+  - hosts:
+    - goplatform-partner.qa.gogoro.cc
+    name: goplatform-partner
+    port: 8080
+  - hosts:
+    - goplatform-pocket.qa.gogoro.cc
+    name: goplatform-pocket
+    port: 8080
+  - hosts:
+    - goplatform-report.qa.gogoro.cc
+    name: goplatform-report
+    port: 8080
+  - hosts:
+    - goplatform-scooter-gtu.qa.gogoro.cc
+    name: goplatform-scooter-gtu
+    port: 8080
+  - hosts:
+    - goplatform-service.qa.gogoro.cc
+    name: goplatform-service
+    port: 8080
+  - hosts:
+    - goplatform-swaplog.qa.gogoro.cc
+    name: goplatform-swaplog
+    port: 8080
+  - hosts:
+    - goplatform-vm.qa.gogoro.cc
+    name: goplatform-vm
+    port: 8080
+  targetNamespace: ggr-goplatform
+- deployments:
+  - hosts:
+    - bi-data-collector-acl.qa.gogoro.cc
+    name: bi-data-collector-acl
+    port: 5678
+  - hosts:
+    - goplatform-account-acl.qa.gogoro.cc
+    name: goplatform-account-acl
+    port: 8080
+  - hosts:
+    - goplatform-acl.qa.gogoro.cc
+    name: goplatform-acl
+    port: 8080
+  - hosts:
+    - goplatform-alert-acl.qa.gogoro.cc
+    name: goplatform-alert-acl
+    port: 8080
+  - hosts:
+    - goplatform-bi-acl.qa.gogoro.cc
+    name: goplatform-bi-acl
+    port: 8080
+  - hosts:
+    - goplatform-billing-acl.qa.gogoro.cc
+    name: goplatform-billing-acl
+    port: 8080
+  - hosts:
+    - goplatform-swaplog-acl-billing.qa.gogoro.cc
+    name: goplatform-billing-swaplog-acl
+    port: 8080
+  - hosts:
+    - goplatform-global-acl.qa.gogoro.cc
+    name: goplatform-global-acl
+    port: 8080
+  - hosts:
+    - goplatform-global-gs-acl.qa.gogoro.cc
+    name: goplatform-global-gs-acl
+    port: 8080
+  - hosts:
+    - goplatform-global-redirect-acl.qa.gogoro.cc
+    name: goplatform-global-redirect-acl
+    port: 8080
+  - hosts:
+    - keyservice-acl.qa.gogoro.cc
+    name: goplatform-keyservice-acl
+    port: 8080
+  - hosts:
+    - goplatform-minvoice-acl.qa.gogoro.cc
+    name: goplatform-minvoice-acl
+    port: 8080
+  - hosts:
+    - goplatform-minvoice-billing-acl.qa.gogoro.cc
+    name: goplatform-minvoice-billing-acl
+    port: 8080
+  - hosts:
+    - goplatform-partner-acl.qa.gogoro.cc
+    name: goplatform-partner-acl
+    port: 8080
+  - hosts:
+    - goplatform-pocket-acl.qa.gogoro.cc
+    name: goplatform-pocket-acl
+    port: 8080
+  - hosts:
+    - goplatform-pocket-billing-acl.qa.gogoro.cc
+    name: goplatform-pocket-billing-acl
+    port: 8080
+  - hosts:
+    - goplatform-report-acl.qa.gogoro.cc
+    name: goplatform-report-acl
+    port: 8080
+  - hosts:
+    - goplatform-scooter-gtu-acl.qa.gogoro.cc
+    name: goplatform-scooter-gtu-acl
+    port: 8080
+  - hosts:
+    - goplatform-service-acl.qa.gogoro.cc
+    name: goplatform-service-acl
+    port: 8080
+  - hosts:
+    - goplatform-swaplog-acl.qa.gogoro.cc
+    name: goplatform-swaplog-acl
+    port: 8080
+  - hosts:
+    - goplatform-vm-acl.qa.gogoro.cc
+    name: goplatform-vm-acl
+    port: 8080
+  - hosts:
+    - middle-db-synchronizer-acl.qa.gogoro.cc
+    name: middle-db-synchronizer-acl
+    port: 8080
+  targetNamespace: ggr-goplatform-acl
+- deployments:
+  - name: goplatform-acl
+    port: 8080
+  - name: goplatform-alert-acl
+    port: 8080
+  - name: goplatform-global-acl
+    port: 8080
+  - name: goplatform-global-gs-acl
+    port: 8080
+  - name: goplatform-keyservice-acl
+    port: 8080
+  - name: goplatform-swaplog-acl
+    port: 8080
+  - name: goplatform-vm-acl
+    port: 8080
+  targetNamespace: ggr-goplatform-gos-acl
+- deployments:
+  - name: goplatform
+    port: 8080
+  - name: goplatform-global
+    port: 8080
+  - name: goplatform-keyservice
+    port: 8080
+  - name: goplatform-pocket
+    port: 8080
+  - name: goplatform-swaplog
+    port: 8080
+  - name: goplatform-vm
+    port: 8080
+  targetNamespace: ggr-goplatform-mggr
+global:
+  environment: qa
+  platform: on-premises
+
+HOOKS:
+MANIFEST:
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: data-dispatcher
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-account
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-api-doc-portal
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-bi
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-fota
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-global
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-keyservice
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-minvoice
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-partner
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-pocket
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-report
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-scooter-gtu
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-service
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-swaplog
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-vm
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bi-data-collector-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-account-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-alert-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-bi-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-billing-swaplog-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-global-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-global-gs-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-global-redirect-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-keyservice-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-minvoice-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-minvoice-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-partner-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-pocket-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-pocket-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-report-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-scooter-gtu-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-service-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-swaplog-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-vm-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: middle-db-synchronizer-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-alert-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-global-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-global-gs-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-keyservice-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-swaplog-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-vm-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-global
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-keyservice
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-pocket
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-swaplog
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: goplatform-vm
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+imagePullSecrets:
+- name: harbor
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: data-dispatcher
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 5678
+  selector:
+    app: data-dispatcher
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-account
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-account
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-api-doc-portal
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 3000
+  selector:
+    app: goplatform-api-doc-portal
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-bi
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-bi
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-fota
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-fota
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-global
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-global
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-keyservice
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-keyservice
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-minvoice
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-minvoice
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-partner
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-partner
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-pocket
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-pocket
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-report
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-report
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-scooter-gtu
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-scooter-gtu
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-service
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-service
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-swaplog
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-swaplog
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-vm
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-vm
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: bi-data-collector-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 5678
+  selector:
+    app: bi-data-collector-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-account-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-account-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-alert-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-alert-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-bi-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-bi-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-billing-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-billing-swaplog-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-billing-swaplog-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-global-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-global-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-global-gs-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-global-gs-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-global-redirect-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-global-redirect-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-keyservice-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-keyservice-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-minvoice-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-minvoice-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-minvoice-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-minvoice-billing-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-partner-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-partner-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-pocket-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-pocket-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-pocket-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-pocket-billing-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-report-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-report-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-scooter-gtu-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-scooter-gtu-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-service-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-service-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-swaplog-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-swaplog-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-vm-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-vm-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: middle-db-synchronizer-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: middle-db-synchronizer-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-alert-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-alert-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-global-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-global-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-global-gs-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-global-gs-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-keyservice-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-keyservice-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-swaplog-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-swaplog-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-vm-acl
+  namespace: ggr-goplatform-gos-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-vm-acl
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-global
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-global
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-keyservice
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-keyservice
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-pocket
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-pocket
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-swaplog
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-swaplog
+---
+# Source: expose/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goplatform-vm
+  namespace: ggr-goplatform-mggr
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: goplatform-vm
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: data-dispatcher
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "data-dispatcher.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: data-dispatcher
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-account
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-account.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-account
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-api-doc-portal
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "go-platform-api-doc.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-api-doc-portal
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-bi
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-bi.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-bi
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-fota
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-fota.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-fota
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-global
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-global.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-global
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-keyservice
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "keyservice.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-keyservice
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-minvoice
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-minvoice.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-minvoice
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-partner
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-partner.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-partner
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-pocket
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-pocket.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-pocket
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-report
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-report.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-report
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-scooter-gtu
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-scooter-gtu.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-scooter-gtu
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-service
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-service.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-service
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-swaplog
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-swaplog.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-swaplog
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-vm
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-vm.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-vm
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bi-data-collector-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "bi-data-collector-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: bi-data-collector-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-account-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-account-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-account-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-alert-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-alert-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-alert-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-bi-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-bi-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-bi-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-billing-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-billing-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-billing-swaplog-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-swaplog-acl-billing.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-billing-swaplog-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-global-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-global-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-global-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-global-gs-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-global-gs-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-global-gs-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-global-redirect-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-global-redirect-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-global-redirect-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-keyservice-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "keyservice-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-keyservice-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-minvoice-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-minvoice-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-minvoice-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-minvoice-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-minvoice-billing-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-minvoice-billing-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-partner-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-partner-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-partner-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-pocket-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-pocket-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-pocket-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-pocket-billing-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-pocket-billing-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-pocket-billing-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-report-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-report-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-report-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-scooter-gtu-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-scooter-gtu-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-scooter-gtu-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-service-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-service-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-service-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-swaplog-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-swaplog-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-swaplog-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goplatform-vm-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goplatform-vm-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: goplatform-vm-acl
+              port:
+                number: 80
+---
+# Source: expose/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: middle-db-synchronizer-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-service-expose
+  annotations:
+    meta.helm.sh/release-name: platform-expose
+    meta.helm.sh/release-namespace: default
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "middle-db-synchronizer-acl.qa.gogoro.cc"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: middle-db-synchronizer-acl
+              port:
+                number: 80
+

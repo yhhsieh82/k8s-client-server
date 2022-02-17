@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: service-a0
+spec:
+  podSelector:
+    matchLabels:
+      app: service-a0
+  policyTypes:
+    - Egress
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: default
+          podSelector:
+            matchLabels:
+              app: service-b
+    - to:
+        - ipBlock:
+            cidr: 142.250.68.46/24
+#      ports:
+#        - protocol: TCP
+#          port: 5978
+
+
+#        - namespaceSelector:
+#            matchLabels:
+#              name: ggr-goplatform
+#          podSelector:
+#            matchLabels:
+#              app: goplatform-pocket

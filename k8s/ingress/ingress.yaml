@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: learn-k8s-service-a-b
+  labels:
+    platform: on-premises
+spec:
+  rules:
+    - host: "service-a0.learn.k8s.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: service-a0
+                port:
+                  number: 8081

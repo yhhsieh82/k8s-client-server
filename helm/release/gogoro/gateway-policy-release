@@ -1,0 +1,695 @@
+NAME: gateway-policy
+LAST DEPLOYED: Tue Feb  8 03:03:06 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 10
+TEST SUITE: None
+USER-SUPPLIED VALUES:
+global:
+  environment: qa
+  platform: on-premises
+namespaceToNamespaces:
+- sourceNamespace: ggr-gateway
+  targetNamespaces:
+  - shared
+podsToNamespace:
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - payment-gateway
+  - mfg-service
+  - edi-gateway
+  targetNamespaces:
+  - ggr-goplatform
+  - ggr-goplatform-acl
+podsToPods:
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - payment-gateway
+  targetNamespace: ggr-billing-int
+  targetPods:
+  - billing-service
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - edi-gateway
+  targetNamespace: ggr-gateway
+  targetPods:
+  - mfg-service
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - message-gateway
+  targetNamespace: ggr-goplatform-acl
+  targetPods:
+  - goplatform-acl
+- sourceNamespace: ggr-goplatform-acl
+  sourcePods:
+  - goplatform-keyservice-acl
+  targetNamespace: ggr-gateway
+  targetPods:
+  - message-gateway
+
+COMPUTED VALUES:
+global:
+  environment: qa
+  platform: on-premises
+namespaceToNamespaces:
+- sourceNamespace: ggr-gateway
+  targetNamespaces:
+  - shared
+podsToNamespace:
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - payment-gateway
+  - mfg-service
+  - edi-gateway
+  targetNamespaces:
+  - ggr-goplatform
+  - ggr-goplatform-acl
+podsToPods:
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - payment-gateway
+  targetNamespace: ggr-billing-int
+  targetPods:
+  - billing-service
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - edi-gateway
+  targetNamespace: ggr-gateway
+  targetPods:
+  - mfg-service
+- sourceNamespace: ggr-gateway
+  sourcePods:
+  - message-gateway
+  targetNamespace: ggr-goplatform-acl
+  targetPods:
+  - goplatform-acl
+- sourceNamespace: ggr-goplatform-acl
+  sourcePods:
+  - goplatform-keyservice-acl
+  targetNamespace: ggr-gateway
+  targetPods:
+  - message-gateway
+
+HOOKS:
+MANIFEST:
+---
+# Source: networkpolicy/templates/allow-ns-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-ploicy-ns2ns-ggr-gateway-to-shared
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: shared
+      podSelector: {}
+---
+# Source: networkpolicy/templates/allow-ns-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-ns2ns-from-ggr-gateway-to-shared
+  namespace: shared
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+      podSelector: {}
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2ns-payment-gateway-to-ggr-goplatform
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: payment-gateway
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2ns-payment-gateway-to-ggr-goplatform-acl
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: payment-gateway
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform-acl
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2ns-mfg-service-to-ggr-goplatform
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: mfg-service
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2ns-mfg-service-to-ggr-goplatform-acl
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: mfg-service
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform-acl
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2ns-edi-gateway-to-ggr-goplatform
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: edi-gateway
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2ns-edi-gateway-to-ggr-goplatform-acl
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: edi-gateway
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform-acl
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2ns-from-ggr-gateway-payment-gateway-to-ggr-goplatform
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+    - podSelector:
+        matchLabels:
+          app: payment-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2ns-from-ggr-gateway-mfg-service-to-ggr-goplatform
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+    - podSelector:
+        matchLabels:
+          app: mfg-service
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2ns-from-ggr-gateway-edi-gateway-to-ggr-goplatform
+  namespace: ggr-goplatform
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+    - podSelector:
+        matchLabels:
+          app: edi-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2ns-from-ggr-gateway-payment-gateway-to-ggr-goplatform-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+    - podSelector:
+        matchLabels:
+          app: payment-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2ns-from-ggr-gateway-mfg-service-to-ggr-goplatform-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+    - podSelector:
+        matchLabels:
+          app: mfg-service
+---
+# Source: networkpolicy/templates/allow-pods-to-ns.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2ns-from-ggr-gateway-edi-gateway-to-ggr-goplatform-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+    - podSelector:
+        matchLabels:
+          app: edi-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2pod-ggr-gateway-payment-gateway-to-ggr-billing-int-billing-service
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: payment-gateway
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-billing-int
+      podSelector:
+        matchLabels:
+          app: billing-service
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2pod-from-ggr-gateway-payment-gateway-to-ggr-billing-int-billing-service
+  namespace: ggr-billing-int
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: billing-service
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+      podSelector:
+        matchLabels:
+          app: payment-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2pod-ggr-gateway-edi-gateway-to-ggr-gateway-mfg-service
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: edi-gateway
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+      podSelector:
+        matchLabels:
+          app: mfg-service
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2pod-from-ggr-gateway-edi-gateway-to-ggr-gateway-mfg-service
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: mfg-service
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+      podSelector:
+        matchLabels:
+          app: edi-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2pod-ggr-gateway-message-gateway-to-ggr-goplatform-acl-goplatform-acl
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: message-gateway
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform-acl
+      podSelector:
+        matchLabels:
+          app: goplatform-acl
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2pod-from-ggr-gateway-message-gateway-to-ggr-goplatform-acl-goplatform-acl
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: goplatform-acl
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+      podSelector:
+        matchLabels:
+          app: message-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-policy-pod2pod-ggr-goplatform-acl-goplatform-keyservice-acl-to-ggr-gateway-message-gateway
+  namespace: ggr-goplatform-acl
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: goplatform-keyservice-acl
+  policyTypes:
+  - Egress
+  egress: 
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-gateway
+      podSelector:
+        matchLabels:
+          app: message-gateway
+---
+# Source: networkpolicy/templates/allow-pods-to-pods.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-policy-pod2pod-from-ggr-goplatform-acl-goplatform-keyservice-acl-to-ggr-gateway-message-gateway
+  namespace: ggr-gateway
+  labels:
+    platform: on-premises
+    environment: qa
+    sourceGitlabGroup: sre
+    sourceGitlabProject: k8s-networkpolicy
+  annotations:
+    meta.helm.sh/release-name: gateway-policy
+    meta.helm.sh/release-namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: message-gateway
+  policyTypes:
+  - Ingress
+  ingress: 
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ggr-goplatform-acl
+      podSelector:
+        matchLabels:
+          app: goplatform-keyservice-acl
+

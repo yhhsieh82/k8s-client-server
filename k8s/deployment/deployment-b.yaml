@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b
+  labels:
+    app: service-b
+spec:
+  replicas: 2
+  selector:
+    #define the Pods which need to be controlled
+    matchLabels:
+      app: service-b
+  template:
+    #pods label
+    metadata:
+      labels:
+        app: service-b
+    #indicates that the Pods run one container
+    spec:
+      containers:
+        - name: service-b
+          image: nathanhsiehondocker/learn-k8s-service-b:1.0
+          ports:
+            - containerPort: 3000

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.metadata.name }}
+spec:
+  type: NodePort
+  selector:
+    # target pods with label
+    app: {{ .Values.metadata.name }}
+  ports:
+    - protocol: TCP
+      port: 8081
+#      target the port of the pod
+#      targetPort: 8081
