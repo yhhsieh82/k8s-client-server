@@ -1,5 +1,6 @@
 ## project: k8s-client-server
 - [github project](https://github.com/yhhsieh82/k8s-client-server)
+- [project topology](https://app.diagrams.net/#G17xYS5dA2ITGEWMrUpZdsvr20kbWCc-go)
 ### Experiment
 啟動serivce-a0(client), service-b(server)。去實驗k8s Deployment、Service、設定networkpolicy來擋request。最後使用helm chart來管理一個服務的部署。
 #### Deployment
